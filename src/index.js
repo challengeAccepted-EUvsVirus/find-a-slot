@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 
 import {Navbar, Nav} from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.css';
 
 import './index.css';
 import App from './App';
