@@ -42,8 +42,6 @@ class App extends Component {
     //   })
       .then(response => response.json())
       .then(response => {
-        console.log('RESULT: ', response);  
-
         this.setState({
           result: response,
           isLoading: false
@@ -52,6 +50,10 @@ class App extends Component {
       .catch(error => {  
         console.log('Request failure: ', error);  
       });
+  }
+
+  handleClearClick = (event) => {
+    this.setState({ result: "" });
   }
 
   render() {
@@ -76,6 +78,15 @@ class App extends Component {
                   disabled={isLoading}
                   onClick={!isLoading ? this.handleSubmitClick : null}>
                   {isLoading ? 'Searching...' : 'Search'}
+                </Button>
+              </Col>
+              <Col>
+                <Button
+                  block
+                  variant="danger"
+                  disabled={isLoading}
+                  onClick={this.handleClearClick}>
+                  Clear
                 </Button>
               </Col>
             </Row>
