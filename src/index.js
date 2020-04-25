@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
 // import ThemeSwitcher from './ThemeSwitcher';
 import * as serviceWorker from './serviceWorker';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import {Navbar, Nav} from "react-bootstrap";
+
+import './index.css';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
