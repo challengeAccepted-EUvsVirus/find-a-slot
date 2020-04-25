@@ -107,9 +107,10 @@ class App extends Component {
           <Row>
             {[
               {
-                  "id":1234,
-                  "name":"Drusifour",
+                  "id":1,
+                  "name":"Carrefour",
                   "image_url":"https://upload.wikimedia.org/wikipedia/commons/5/5b/Carrefour_logo.svg",
+                  "site_url":"https://www.carrefour.es/",
                   "slots":[
                     {
                         "datetime_start":"2015-08-05T08:40:51.620Z",
@@ -121,32 +122,32 @@ class App extends Component {
                     }
                   ]
               },{
-                "id":1234,
-                "name":"Drusifour",
-                "image_url":"https://upload.wikimedia.org/wikipedia/commons/5/5b/Carrefour_logo.svg",
+                "id":3,
+                "name":"Futeria Paco",
+                "image_url":"https://images.vexels.com/media/users/3/147164/isolated/preview/6bf92415c7b2651f512aa0db5a3e1aba-icono-de-manzana-roja-de-fruta-by-vexels.png",
                 "slots":[
                   {
-                      "datetime_start":"2015-08-05T08:40:51.620Z",
-                      "datetime_end":"2016-08-05T08:40:51.620Z"
+                      "datetime_start":"2015-08-07T08:40:51.620Z",
+                      "datetime_end":"2016-08-07T11:40:51.620Z"
                   },
                   {
-                      "datetime_start":"2020-08-05T08:40:51.620Z",
-                      "datetime_end":"2021-08-05T08:40:51.620Z"
+                      "datetime_start":"2020-08-09T13:40:51.620Z",
+                      "datetime_end":"2021-08-09T16:40:51.620Z"
+                  },
+                  {
+                    "datetime_start":"2020-08-09T13:40:51.620Z",
+                    "datetime_end":"2021-08-09T12:40:51.620Z"
                   }
                 ]
             },
             {
-              "id":1234,
-              "name":"Drusifour",
-              "image_url":"https://upload.wikimedia.org/wikipedia/commons/5/5b/Carrefour_logo.svg",
+              "id":4,
+              "name":"El Corte Ingles",
+              "image_url":"https://upload.wikimedia.org/wikipedia/commons/0/02/Logo_Corte_Ingl%C3%A9s.svg",
               "slots":[
                 {
                     "datetime_start":"2015-08-05T08:40:51.620Z",
                     "datetime_end":"2016-08-05T08:40:51.620Z"
-                },
-                {
-                    "datetime_start":"2020-08-05T08:40:51.620Z",
-                    "datetime_end":"2021-08-05T08:40:51.620Z"
                 }
               ]
           }
@@ -155,13 +156,13 @@ class App extends Component {
                 <Card className="result">
                   <Card.Img variant="top" src={element.image_url} />
                   <Card.Body>
-                    <Card.Title>Drusifour</Card.Title>
+                    <Card.Title>{element.name}</Card.Title>
                     {element.slots.map((slot, idy) => (
                       <Card.Text key={idy}>
-                        {Moment(slot.datetime_start).format('d MMM hh:mm')} - {Moment(slot.datetime_end).format('hh:mm')}
+                        {Moment(slot.datetime_start).format('DD MMM HH:mm')} - {Moment(slot.datetime_end).format('HH:mm')}
                       </Card.Text>
                      ))}
-                    <Button href={element.url} variant="primary">Visit</Button>
+                    <Button href={element.site_url} variant="primary">Visit</Button>
                   </Card.Body>
                 </Card>
               </Col>
