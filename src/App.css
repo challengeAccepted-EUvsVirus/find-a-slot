@@ -44,3 +44,12 @@ label {
   width: 18rem;
   font-size: small;
 }
+/*
+Card Icons
+*/
+
+.card image{
+  width: 100px;
+  margin: auto;
+  padding: 1rem;
+}
