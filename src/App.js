@@ -56,8 +56,8 @@ class App extends Component {
           isLoading: false
         });
       })
-      .catch(error => {  
-        console.log('Request failure: ', error);  
+      .catch(error => {
+        console.log('Request failure: ', error);
       })
 
     });
@@ -123,8 +123,9 @@ class App extends Component {
                   ]
               },{
                 "id":3,
-                "name":"Futeria Paco",
+                "name":"Frutería Paco",
                 "image_url":"https://images.vexels.com/media/users/3/147164/isolated/preview/6bf92415c7b2651f512aa0db5a3e1aba-icono-de-manzana-roja-de-fruta-by-vexels.png",
+                "site_url":"https://www.carrefour.es/",
                 "slots":[
                   {
                       "datetime_start":"2015-08-07T08:40:51.620Z",
@@ -144,6 +145,7 @@ class App extends Component {
               "id":4,
               "name":"El Corte Ingles",
               "image_url":"https://upload.wikimedia.org/wikipedia/commons/0/02/Logo_Corte_Ingl%C3%A9s.svg",
+              "site_url":"https://www.elcorteingles.es/",
               "slots":[
                 {
                     "datetime_start":"2015-08-05T08:40:51.620Z",

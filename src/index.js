@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App from './App';
 // import ThemeSwitcher from './ThemeSwitcher';
 import * as serviceWorker from './serviceWorker';
 
-import 'bootstrap/dist/css/bootstrap.css';
+
 import {Navbar, Nav} from "react-bootstrap";
 
 ReactDOM.render(
@@ -22,10 +23,11 @@ ReactDOM.render(
               Find a Slot
           </Navbar.Brand>
           <Nav className="mr-auto">
-              <Nav.Link href="#home">Search</Nav.Link>
-              <Nav.Link href="#features">About us</Nav.Link>
-              <Nav.Link href="#pricing">FAQs</Nav.Link>
+              <Nav.Link href="#search">Search</Nav.Link>
+              <Nav.Link href="#about">About us</Nav.Link>
+              <Nav.Link href="#faq">FAQs</Nav.Link>
           </Nav>
+          <Nav.Link href="https://backoffice-find-a-slot.netlify.app/">Login</Nav.Link>
       </Navbar>
     <App />
   </React.StrictMode>,
