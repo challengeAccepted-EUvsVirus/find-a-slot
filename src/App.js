@@ -80,7 +80,7 @@ class App extends Component {
           <Form>
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Postcode</Form.Label>
-              <Form.Control type="postcode" placeholder="N11 M22" />
+              <Form.Control name="postal_code" placeholder="N11 M22" />
             </Form.Group>
             <Row>
               <Col>
