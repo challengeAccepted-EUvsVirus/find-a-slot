@@ -78,7 +78,7 @@ class App extends Component {
         </div>
         <div className="content">
           <Form>
-            <Form.Group controlId="form.postal_code">
+            <Form.Group as={Col}>
               <Form.Label>Postcode</Form.Label>
               <Form.Control name="postal_code" placeholder="N11 M22" />
             </Form.Group>
