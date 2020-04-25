@@ -3,5 +3,6 @@
 // for backend
 export const backendUrl = 
   process.env.NODE_ENV == 'production'
-    ? 'CHANGE_ME/prediction/'
-    : 'http://127.0.0.1:5000/prediction/'
+    ? 'CHANGE_ME/find/'
+    : 'http://jsonplaceholder.typicode.com/users'
+    // : 'http://127.0.0.1:5000/find'

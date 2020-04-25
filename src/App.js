@@ -11,10 +11,7 @@ class App extends Component {
     this.state = {
       isLoading: false,
       formData: {
-        sepalLength: 4,
-        sepalWidth: 2,
-        petalLength: 1,
-        petalWidth: 0
+        postcode: "XXXXX",
       },
       result: ""
     };
@@ -30,33 +27,36 @@ class App extends Component {
     });
   }
 
-  handlePredictClick = (event) => {
+  handleSubmitClick = (event) => {
     const formData = this.state.formData;
     this.setState({ isLoading: true });
-    fetch(backendUrl,
-      {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        method: 'POST',
-        body: JSON.stringify(formData)
-      })
+    fetch(backendUrl)
+    // fetch(backendUrl,
+    //   {
+    //     headers: {
+    //       'Accept': 'application/json',
+    //       'Content-Type': 'application/json'
+    //     },
+    //     method: 'POST',
+    //     body: JSON.stringify(formData)
+    //   })
       .then(response => response.json())
       .then(response => {
+        console.log('RESULT: ', response);  
+
         this.setState({
-          result: response.result,
+          result: response,
           isLoading: false
         });
+      })
+      .catch(error => {  
+        console.log('Request failure: ', error);  
       });
-  }
-
-  handleCancelClick = (event) => {
-    this.setState({ result: "" });
   }
 
   render() {
     const isLoading = this.state.isLoading;
+    const result = this.state.result;
     return (
       <Container>
         <div>
@@ -74,12 +74,21 @@ class App extends Component {
                   block
                   variant="success"
                   disabled={isLoading}
-                  onClick={!isLoading ? this.handlePredictClick : null}>
+                  onClick={!isLoading ? this.handleSubmitClick : null}>
                   {isLoading ? 'Searching...' : 'Search'}
                 </Button>
               </Col>
             </Row>
           </Form>
+          {result === "" ? null :
+          <Row>
+            {result.map((element, idx) => (
+              <Col key={idx} className="result-container">
+                <h5 id="result">{element.name} {element.username}</h5>
+              </Col>
+            ))}
+            </Row>
+          }
         </div>
       </Container>
     );
