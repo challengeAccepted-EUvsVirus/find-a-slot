@@ -163,7 +163,8 @@ class App extends Component {
                                         }
                                     ]
                                 }
-                            ].map((element, idx) => (
+                            ].sort(function (a, b) { return 0.5 - Math.random() })
+                            .map((element, idx) => (
                                 <Col key={idx} className="result-container">
                                     <Card className="result">
                                         <Card.Img variant="top" src={element.image_url}/>
