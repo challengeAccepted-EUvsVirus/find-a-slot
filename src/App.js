@@ -174,7 +174,7 @@ class App extends Component {
                                                     {Moment(slot.datetime_start).format('DD MMM HH:mm')} - {Moment(slot.datetime_end).format('HH:mm')}
                                                 </Card.Text>
                                             ))}
-                                            <Button href={element.site_url} variant="primary">Visit</Button>
+                                            <Button href={element.site_url} variant="primary" target="_blank">Visit</Button>
                                         </Card.Body>
                                     </Card>
                                 </Col>
